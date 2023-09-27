@@ -1,11 +1,24 @@
 <?php
 
-function greet(){
-    $name = htmlspecialchars($_GET['name']);
-    $surname = $_GET['surname'];
+require 'app/helpers.php';
+require 'app/Tasks.php';
 
-    return "Hola $name $surname!";
+//$task = new Task(1, "comprar pa", "a la panaderia", 0);
+$user = 'debian-sys-maint';
+$pass = 'h7PzOi48oTLz1eDQ';
+
+try {
+    $dbh = new PDO('mysql:host=localhost;dbname=phplaraveldevs', $user, $pass);
+    //$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (\PDOException $exception) {
+    echo 'Error de connexió a la base de dades: ' . $exception->getMessage();
 }
+
+$statement = $dbh->prepare('SELECT * FROM tasks');
+$statement->execute();
+$tasks = $statement->fetchAll(PDO::FETCH_OBJ);
+//var_dump($tasks[0]);
+
 //executem funció
 $greeting = greet();
 

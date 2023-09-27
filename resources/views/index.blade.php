@@ -8,8 +8,8 @@
     <title>Document</title>
     <style>
         header{
-            background: beige;
-            padding: 2em;
+            background: #E5DEEC;
+            padding: 1.5em;
             text-align: center;
         }
     </style>
@@ -17,8 +17,27 @@
 <body>
 <header>
 <h1>
-    <?=$greeting;?>
-</header>
+    <?=$greeting;?> <!--saluda a la persona i li mostrarà la taula amb les tasques-->
 </h1>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Completed</th>
+        </tr>
+
+
+        <?php foreach ($tasks as $task): ?>
+            <tr>
+                <td><?=$task->id;?>></td>
+                <td><?=$task->title;?>></td>
+                <td><?=$task->description;?>></td>
+                <td><?=$task->completed;?>></td>
+            </tr>
+        <?php endforeach; ?>
+
+    </table>
+</header>
 </body>
 </html>
