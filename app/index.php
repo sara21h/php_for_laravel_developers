@@ -4,21 +4,7 @@ require 'app/helpers.php';
 require 'app/Task.php';
 require 'config.php';
 
-//$task = new Task(1, "comprar pa", "a la panaderia", 0);
-//$user = 'debian-sys-maint';
-//$pass = 'h7PzOi48oTLz1eDQ';
-//$dsn = 'mysql:host=localhost;dbname=phplaraveldevs';
-
-//connect -> API om connect, senese paràmetres entrada i tornarà objecte $dbh
-try {
-    $dbh = new PDO(
-        $config['database']['databasetype'] . ":host=" . ($config['database']['host']) . ";dbname=" . ($config['database']['name']) . "",
-        $config['database']['user'],
-        $config['database']['password']);
-    //$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (\PDOException $exception) {
-    echo 'Error de connexió a la base de dades: ' . $exception->getMessage();
-}
+$dbh = connectDB($config);
 
 $statement = $dbh->prepare('SELECT * FROM tasks');
 $statement->execute();
