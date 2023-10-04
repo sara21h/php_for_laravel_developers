@@ -9,16 +9,12 @@ require 'config.php';
 //$pass = 'h7PzOi48oTLz1eDQ';
 //$dsn = 'mysql:host=localhost;dbname=phplaraveldevs';
 
-$user = $config['database']['user'];
-$pass = $config['database']['password'];
-$type = $config['database']['databasetype'];
-$host = $config['database']['host'];
-$name = $config['database']['name'];
-$dsn = "$type:host=$host;dbname=$name";
-
 //connect -> API om connect, senese paràmetres entrada i tornarà objecte $dbh
 try {
-    $dbh = new PDO($dsn, $user, $pass);
+    $dbh = new PDO(
+        $config['database']['databasetype'] . ":host=" . ($config['database']['host']) . ";dbname=" . ($config['database']['name']) . "",
+        $config['database']['user'],
+        $config['database']['password']);
     //$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (\PDOException $exception) {
     echo 'Error de connexió a la base de dades: ' . $exception->getMessage();
