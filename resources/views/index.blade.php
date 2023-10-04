@@ -12,6 +12,18 @@
             padding: 1.5em;
             text-align: center;
         }
+        table{
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th{
+            border: 1px solid black;
+            padding: 8px;
+        }
+        td{
+            border: 1px solid black; padding: 8px;
+            padding: 8px;
+        }
     </style>
 </head>
 <body>
@@ -19,6 +31,7 @@
 <h1>
     <?=$greeting;?> <!--saluda a la persona i li mostrarà la taula amb les tasques-->
 </h1>
+</header>
     <table>
         <tr>
             <th>Id</th>
@@ -38,6 +51,5 @@
         <?php endforeach; ?>
 
     </table>
-</header>
 </body>
 </html>
