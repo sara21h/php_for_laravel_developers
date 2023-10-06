@@ -11,3 +11,7 @@
 - v0.4: Versió codi després del 1 vídeo
 
 - v0.5: Separar la configuració (config.php) del codi -> implementat la 0 de SOLID -> Open To Extension closed to modification
+
+- v0.6: Refactorització POO, afegit composer.json i autoload. Namespaces
+
+- v0.7: Container -> Implementar D de SOLID Dependency Inversion Principle -> Inverter -> Inversor Container -> APP 

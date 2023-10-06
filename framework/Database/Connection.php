@@ -1,26 +1,25 @@
 <?php
 
 namespace Framework\Database;
-
 use PDO;
 
 class Connection
 {
-    private $config;
+    private static $config;
 
     public function __construct($config)
     {
         $this->config = $config;
     }
 
-    function connectDB() //Dependency Injection
+    public static function make($config)
     {
         try {
             return new PDO(
-                $this->config['database']['databasetype'] . ':host=' . $this->config['database']['host'] . ';dbname=' . $this->config['database']['name'],
-                $this->config['database']['user'],
-                $this->config['database']['password']);
-        } catch (\PDOException $exception) {
+                $config['databasetype'] . ':host=' . $config['host'] . ';dbname=' . $config['name'],
+                $config['user'],
+                $config['password']);
+        } catch (\Exception $exception) {
             echo 'Error de connexió a la base de dades: ' . $exception->getMessage();
         }
     }

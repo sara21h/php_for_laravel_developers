@@ -2,28 +2,25 @@
 
 namespace Framework\Database;
 
-use App\Models\Task;
 use PDO;
+
 
 class Database
 {
-    public $config;
-
-    public function __construct($config)
+    protected $pdo;
+    public function __construct($pdo)
     {
-        $this->config = $config;
-        $this->connection = new Connection($config);
+        $this->pdo = $pdo;
     }
 
-    function selectAll($table)
+    public function selectAll($table)
     {
-        $dbh = $this->connection->connectDB($this->config);
 
-        $statement = $dbh->prepare( "SELECT * FROM $table;");
+        $statement = $this->pdo->prepare("SELECT * FROM $table;");
 
         $statement->execute();
 
-        return $statement->fetchAll(PDO::FETCH_CLASS, Task::class);
+        return $statement->fetchAll(PDO::FETCH_CLASS);
 
     }
 
