@@ -8,8 +8,6 @@
 
 - v0.3: Versió codi al final del 1 video
 
-- v0.4: Versió codi després del 1 vídeo
-
 - v0.5: Separar la configuració (config.php) del codi -> implementat la 0 de SOLID -> Open To Extension closed to modification
 
 - v0.6: Refactorització POO, afegit composer.json i autoload. Namespaces
