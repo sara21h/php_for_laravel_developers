@@ -1,8 +1,13 @@
 <?php
 
+use Dotenv\Dotenv;
 use Framework\App;
 use Framework\Database\Connection;
 use Framework\Database\Database;
+
+
+$dotenv = Dotenv::createImmutable(__DIR__.'/..');
+$dotenv->load();
 
 //Laravel Service Providers
 App::bind('config', require 'config.php');

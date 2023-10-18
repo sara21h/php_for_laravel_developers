@@ -13,6 +13,8 @@
             "email": "sbogdan@iesebre.com"
         }
     ],
-    "require": {},
+    "require": {
+        "vlucas/phpdotenv": "^5.5"
+    },
     "license": "proprietary"
 }
