@@ -13,3 +13,6 @@
 - v0.6: Refactorització POO, afegit composer.json i autoload. Namespaces
 
 - v0.7: Container -> Implementar D de SOLID Dependency Inversion Principle -> Inverter -> Inversor Container -> APP 
+
+- v0.8: Fitxer .env -> Exemples ús de paquets PHP Composer de tercers i
+  Refactorització helpers per utilitzar composer autoload
