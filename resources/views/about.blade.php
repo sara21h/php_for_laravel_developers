@@ -37,28 +37,7 @@
     </ul>
 </nav>
 <header>
-<h1>
-    <?=$greeting;?> <!--saluda a la persona i li mostrarà la taula amb les tasques-->
-</h1>
+TODO CONTACT HERE
 </header>
-    <table>
-        <tr>
-            <th>Id</th>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Completed</th>
-        </tr>
-
-
-        <?php foreach ($tasks as $task): ?>
-            <tr>
-                <td><?=$task->id;?>></td>
-                <td><?=$task->title;?>></td>
-                <td><?=$task->description;?>></td>
-                <td><?=$task->completed;?>></td>
-            </tr>
-        <?php endforeach; ?>
-
-    </table>
 </body>
 </html>
