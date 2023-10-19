@@ -16,3 +16,5 @@
 
 - v0.8: Fitxer .env -> Exemples ús de paquets PHP Composer de tercers i
   Refactorització helpers per utilitzar composer autoload
+
+- v0.9: Primera versió per acabar del encaminador o Router
