@@ -18,3 +18,5 @@
   Refactorització helpers per utilitzar composer autoload
 
 - v0.9: Primera versió per acabar del encaminador o Router
+
+- v1.0: Refactorització de les vistes utilitzant layout. Codi DRY
