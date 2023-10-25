@@ -106,7 +106,7 @@
                 </li>
             </ul>
             <div class="mt-10 flex justify-center">
-                <a href="#" class="text-sm font-semibold leading-6 text-indigo-600">
+                <a href="/" class="text-sm font-semibold leading-6 text-indigo-600">
                     <span aria-hidden="true">&larr;</span>
                     Back to home
                 </a>
